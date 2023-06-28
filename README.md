@@ -3,7 +3,7 @@
 ## Step Cloning (Mengambil File)
 Buka folder dimana project unity diletakkan.\n
 didalam folder tersebut. Klik kanan > Git Bash Here.\n
-jalankan perintah : **git clone https://github.com/ndry0611/Mazebro_Legacy.git**
+jalankan perintah : **git clone https://github.com/ndry0611/MazebroLegacy.git**
 
 ## Step sebelum mengerjakan
 1. Create branch anda sendiri terlebih dahulu dengan : **git checkout -b <nama_anda>** (step berlaku apabila anda ragu dan baru, bila yakin langsung aja di branch master)
