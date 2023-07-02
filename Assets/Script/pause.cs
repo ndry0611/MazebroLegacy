@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
@@ -12,13 +13,9 @@ public class pause : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(Input.GetKey(KeyCode.F))
-        {
-            flashlightUI.SetActive(false);
-        }
         pauseMenu.SetActive(false);
-        resumeButton.onClick.AddListener(OnResumePressed);
-        quitButton.onClick.AddListener(OnQuitPressed);
+        resumeButton.onClick.AddListener(onResumePressed);
+        quitButton.onClick.AddListener(onQuitPressed);
     }
 
     // Update is called once per frame
@@ -30,15 +27,19 @@ public class pause : MonoBehaviour
             Time.timeScale = 0;
         }
         
+        if(flashlightUI == true && Input.GetKey(KeyCode.F))
+        {
+            flashlightUI.SetActive(false);
+        }
     }
 
-    void OnResumePressed()
+    void onResumePressed()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
-    void OnQuitPressed()
+    void onQuitPressed()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("menuUi");
     }
 }
